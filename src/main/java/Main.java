@@ -1,12 +1,13 @@
 import org.telegram.telegrambots.ApiContextInitializer;
+import org.telegram.telegrambots.TelegramBotsApi;
+import org.telegram.telegrambots.api.methods.send.SendMessage;
+import org.telegram.telegrambots.api.methods.send.SendPhoto;
+import org.telegram.telegrambots.api.objects.Message;
+import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
-import org.telegram.telegrambots.meta.TelegramBotsApi;
-import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
-import org.telegram.telegrambots.meta.api.objects.Message;
-import org.telegram.telegrambots.meta.api.objects.Update;
-import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-import org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException;
+import org.telegram.telegrambots.exceptions.TelegramApiException;
+import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
+
 
 import java.io.File;
 import java.util.Arrays;
@@ -29,13 +30,7 @@ public class Main extends TelegramLongPollingBot {
     private void sendFoto(Message message, File cat) {
         SendPhoto sendPhoto = new SendPhoto();
         sendPhoto.setChatId(message.getChatId().toString());
-        sendPhoto.setPhoto(cat);
 
-        try {
-            execute(sendPhoto);
-        } catch (TelegramApiException e) {
-            e.printStackTrace();
-        }
     }
 
     private void sendMess(Message message, String text) {

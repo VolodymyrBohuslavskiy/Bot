@@ -84,7 +84,7 @@ public class Main extends TelegramLongPollingBot {
     }
 
     public String getBotToken() {
-        return "788394404:AAFq3Et_I7TXz9Nx6m10YGTw8gXTcWA2M_w";
+        return "788394404:AAFq3Et_I7TXz9Nx6m10YGTw8gXTcWA2M_wtreads";
         // IF 409 Eror, you need new Token !
     }
 }
